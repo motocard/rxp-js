@@ -20,10 +20,10 @@ var RealexHpp = (function() {
 	var isMobileXS =  ( (((window.innerWidth > 0) ? window.innerWidth : screen.width) <= 360 ? true : false) || (((window.innerHeight > 0) ? window.innerHeight : screen.Height) <= 360 ? true : false)) ;
     
 	// Display IFrame on WIndows Phone OS mobile devices   
-	var isMobileIFrame = isWindowsMobileOs;
+	var isMobileIFrame = isWindowsMobileOs || isAndroidOrIOs || isMobileXS;
     
 	// For IOs/Android and small screen devices always open in new tab/window
-	var isMobileNewTab = !isWindowsMobileOs && (isAndroidOrIOs || isMobileXS);
+	var isMobileNewTab = false;
 	var tabWindow;
 	
 	// Initialising some variables used throughout this file.
