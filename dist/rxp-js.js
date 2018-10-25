@@ -1,4 +1,4 @@
-/*! rxp-js - v1.2.1-5
+/*! rxp-js - v1.2.1-6
  * The official Realex Payments JS SDK
  * https://github.com/realexpayments/rxp-js
  * Licensed MIT
@@ -351,7 +351,13 @@ var RealexHpp = (function() {
 				// check for iframe resize values 
 				if (event.data && JSON.parse(event.data).iframe) {
 					if(!isMobileNewTab){
+                        var iframeWidth = window.innerWidth * 0.8;
+                        if (iframeWidth > 600) {
+                            iframeWidth = 600;
+                        }
+
 						var iFrame = document.getElementById("rxp-frame-" + randomId);
+						iFrame.setAttribute("width", iframeWidth);
 						iFrame.style.backgroundColor="#ffffff";
 
 						if(isMobileIFrame){
@@ -362,7 +368,13 @@ var RealexHpp = (function() {
 							iFrame.style.overflowY = "scroll";
 							overlay.style.overflowX = "scroll";
 							overlay.style.overflowY = "scroll";
+						
+						} else{
+							iFrame.style.marginLeft = (iframeWidth / 2 * -1 ) + "px";
 						}
+
+						var closeButton = document.getElementById("rxp-frame-close-" + randomId);
+						closeButton.style.marginLeft = ((iframeWidth / 2) - 7) + "px";
                     }
 				
 				} else {
