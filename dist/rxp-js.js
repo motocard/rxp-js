@@ -1,4 +1,4 @@
-/*! rxp-js - v1.2.1-6
+/*! rxp-js - v1.2.1-7
  * The official Realex Payments JS SDK
  * https://github.com/realexpayments/rxp-js
  * Licensed MIT
@@ -198,8 +198,6 @@ var RealexHpp = (function() {
 				
 				iFrame.style.zIndex="10001";
 				iFrame.style.position="absolute";
-				iFrame.style.transition="transform 0.5s ease-in-out";
-				iFrame.style.transform="scale(0.7)";
 				iFrame.style.opacity="0";
 				
 				overlayElement.appendChild(iFrame);
@@ -213,8 +211,6 @@ var RealexHpp = (function() {
 					iFrame.style.width = "100%";
 					iFrame.style.height = "100%";
 					iFrame.style.minHeight = "100%";
-					iFrame.style.WebkitTransform = "translate3d(0,0,0)";
-					iFrame.style.transform = "translate3d(0, 0, 0)";
 					var metaTag=document.createElement('meta');
 					metaTag.name = "viewport";
 					metaTag.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0";
@@ -227,7 +223,6 @@ var RealexHpp = (function() {
 			
 				iFrame.onload = function() {
 					iFrame.style.opacity="1";
-					iFrame.style.transform="scale(1)";
 					
 					if (spinner.parentNode) {
 						spinner.parentNode.removeChild(spinner);
