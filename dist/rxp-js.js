@@ -575,3 +575,8 @@ var RealexRemote = (function() {
         validateExpiryDateNotInPast : validateExpiryDateNotInPast
     };
 }());
+
+module.exports = {
+	RealexHpp: RealexHpp,
+	RealexRemote: RealexRemote
+};
