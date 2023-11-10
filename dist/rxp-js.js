@@ -373,6 +373,16 @@ var RealexHpp = (function() {
                     }
 				
 				} else {
+
+					if(isMobileNewTab){
+						//Close the new window
+						if(tabWindow){
+							tabWindow.close();	
+						}
+					} else {
+						//Close the lightbox
+						lightboxInstance.close();
+					}
 					
 					var response = event.data;
 	
